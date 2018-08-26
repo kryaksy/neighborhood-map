@@ -19,7 +19,7 @@ class Map extends Component {
     return (
       <div>
         <GoogleMapExample
-          containerElement={<div style={{ height: `100vh`, width: '100vw' }} />}
+          containerElement={<div style={{ height: `93vh`, width: '100vw' }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
       </div>
