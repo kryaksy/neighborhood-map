@@ -13,3 +13,12 @@
   margin: auto;
   padding: 2vh;
 }
+
+.App-list-button {
+  position: absolute;
+  left: 1vh;
+  top: 1vh;
+  padding: 1.5vh;
+  background-color: #444;
+  color: white;
+}

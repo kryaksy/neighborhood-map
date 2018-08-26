@@ -21,6 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <button className="App-list-button">|||</button>
           <h1 className="App-title">Beşiktaş</h1>
         </header>
         <Map places={this.state.places}/>
