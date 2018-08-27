@@ -3,6 +3,7 @@ import './App.css';
 import Map from './components/Map.js';
 import * as FourSquareAPI from './FourSquareAPI'
 import SearchList from './components/SearchList';
+import Header from './components/Header';
 
 class App extends Component {
 
@@ -21,10 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <button className="App-list-button">|||</button>
-          <h1 className="App-title">Beşiktaş</h1>
-        </header>
+        <Header />
         <SearchList places={this.state.places}/>
         <Map places={this.state.places}/>
       </div>
