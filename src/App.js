@@ -25,7 +25,7 @@ class App extends Component {
           <button className="App-list-button">|||</button>
           <h1 className="App-title">Beşiktaş</h1>
         </header>
-        <SearchList />
+        <SearchList places={this.state.places}/>
         <Map places={this.state.places}/>
       </div>
     );
