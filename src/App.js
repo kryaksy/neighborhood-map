@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from './components/Map.js';
 import * as FourSquareAPI from './FourSquareAPI'
+import SearchList from './components/SearchList';
 
 class App extends Component {
 
@@ -24,6 +25,7 @@ class App extends Component {
           <button className="App-list-button">|||</button>
           <h1 className="App-title">Beşiktaş</h1>
         </header>
+        <SearchList />
         <Map places={this.state.places}/>
       </div>
     );
