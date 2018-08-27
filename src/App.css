@@ -22,3 +22,36 @@
   background-color: #444;
   color: white;
 }
+
+.search-list {
+  position: absolute;
+  left: 0;
+  top: 7vh;
+  height: 93vh;
+  z-index: 1;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px -10px 20px 0px #222;
+}
+
+.search-list input {
+  margin: 20px auto;
+  width: 80%;
+  height: 25px;
+  text-align: center;
+  font-size: 1em;
+  background-color: #222;
+  color: white;
+  border: none;
+}
+
+.search-list .list {
+  margin-top: 20px;
+  list-style: none;
+  text-align: left;
+  color: #222;
+}
+
+.search-list .list li {
+  margin: 20px 40px 20px 0;
+}
