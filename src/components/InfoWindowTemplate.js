@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
+import * as FourSquareAPI from './../FourSquareAPI'
 
 class InfoWindowTemplate extends Component {
+
+  state = {
+    imageURL: ''
+  }
+
+  componentWillMount() {
+    FourSquareAPI.getPhoto(this.props.place.venue.id).then(url => this.setState({
+      imageURL: url
+    }))
+  }
+
   render() {
     return (
-      <div>
+      <div style={{ width: 300, textAlign: "center"}}>
         <h2>{this.props.place.venue.name}</h2>
-        <p>{this.props.place.venue.location.address}</p>
+        <div className="place-photo" style={{ width: 300, height: 300, backgroundImage: `url(${this.state.imageURL})` }}></div>
+        <p style={{textAlign: "center"}}>{this.props.place.venue.location.address}</p>
       </div>
     )
   }
