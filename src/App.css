@@ -64,4 +64,5 @@
 
 .search-list .list li {
   margin: 20px 40px 20px 0;
+  cursor: pointer;
 }

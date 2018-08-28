@@ -49,7 +49,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header toggleList={this.toggleList} />
-        <SearchList places={this.state.places}/>
+        <SearchList places={this.state.places}
+                    handleMarkerClick={this.handleMarkerClick}
+                    />
         <Map places={this.state.places}
              handleMarkerClick={this.handleMarkerClick}
              center={this.state.center}
