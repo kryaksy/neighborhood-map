@@ -20,7 +20,8 @@ class App extends Component {
       lng: 28.9932452
     },
     zoom: 14,
-    openedMarker: 1
+    openedMarker: 1,
+    icon: "",
   }
 
   componentDidMount() {
@@ -43,7 +44,8 @@ class App extends Component {
     this.setState({
       center: latlng,
       zoom: 16,
-      openedMarker: id
+      openedMarker: id,
+      icon: "https://cdn2.iconfinder.com/data/icons/orientation/32/location-area-pin-1-48.png",
     })
   }
 
@@ -51,7 +53,8 @@ class App extends Component {
     this.setState({
       center: this.state.defaultCenter,
       zoom: this.state.defaultZoom,
-      openedMarker: 1
+      openedMarker: 1,
+      icon: ""
     })
   }
 
@@ -67,7 +70,8 @@ class App extends Component {
              center={this.state.center}
              zoom={this.state.zoom}
              openedMarker={this.state.openedMarker}
-             closeInfoWindow={this.closeInfoWindow}/>
+             closeInfoWindow={this.closeInfoWindow}
+             icon={this.state.icon}/>
       </div>
     );
   }
