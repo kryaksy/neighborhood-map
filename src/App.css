@@ -25,13 +25,19 @@
 
 .search-list {
   position: absolute;
-  left: 0;
+  left: -300px;
   top: 7vh;
+  width: 300px;
   height: 93vh;
   z-index: 1;
   text-align: center;
   background-color: white;
-  box-shadow: 0px -10px 20px 0px #222;
+  box-shadow: 0px 0px 20px 0px #222;
+  transition: all 0.3s ease-in
+}
+
+.search-list.open {
+  left: 0;
 }
 
 .search-list input {
