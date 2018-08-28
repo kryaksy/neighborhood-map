@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class SearchList extends Component {
 
-  handleItemClick = (e, latlng) => {
-    this.props.handleMarkerClick(e, latlng)
+  handleItemClick = (e, latlng, id) => {
+    this.props.handleMarkerClick(e, latlng, id)
   }
 
   render() {
@@ -13,7 +13,7 @@ class SearchList extends Component {
         <ol className="list">
           {this.props.places.map(place => (
             <li key={place.venue.id}
-                onClick={e => this.handleItemClick(e, {lat: place.venue.location.lat, lng: place.venue.location.lng})}>{place.venue.name}</li>
+                onClick={e => this.handleItemClick(e, {lat: place.venue.location.lat, lng: place.venue.location.lng}, place.venue.id)}>{place.venue.name}</li>
           ))}
         </ol>
       </div>

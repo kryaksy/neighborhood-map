@@ -19,7 +19,8 @@ class App extends Component {
       lat: 41.0439991,
       lng: 28.9932452
     },
-    zoom: 14
+    zoom: 14,
+    openedMarker: 1
   }
 
   componentDidMount() {
@@ -38,10 +39,11 @@ class App extends Component {
     })
   }
 
-  handleMarkerClick = (e, latlng) => {
+  handleMarkerClick = (e, latlng, id) => {
     this.setState({
       center: latlng,
-      zoom: 16
+      zoom: 16,
+      openedMarker: id
     })
   }
 
@@ -55,7 +57,8 @@ class App extends Component {
         <Map places={this.state.places}
              handleMarkerClick={this.handleMarkerClick}
              center={this.state.center}
-             zoom={this.state.zoom}/>
+             zoom={this.state.zoom}
+             openedMarker={this.state.openedMarker}/>
       </div>
     );
   }

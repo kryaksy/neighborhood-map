@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 class Map extends Component {
   render() {
@@ -12,9 +12,14 @@ class Map extends Component {
         {this.props.places.map(place => (
           <Marker key={place.venue.id}
                   position={{ lat: place.venue.location.lat, lng: place.venue.location.lng }}
-                  onClick={e => this.props.handleMarkerClick(e, { lat: place.venue.location.lat , lng: place.venue.location.lng})}/>
+                  onClick={e => this.props.handleMarkerClick(e, { lat: place.venue.location.lat , lng: place.venue.location.lng}, place.venue.id)}>
+            {this.props.openedMarker===place.venue.id && (
+              <InfoWindow>
+                <h2>{place.venue.name}</h2>
+              </InfoWindow>
+            )}
+          </Marker>
         ))}
-
       </GoogleMap>
     ));
 
