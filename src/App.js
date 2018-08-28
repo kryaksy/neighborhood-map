@@ -47,6 +47,14 @@ class App extends Component {
     })
   }
 
+  closeInfoWindow = () => {
+    this.setState({
+      center: this.state.defaultCenter,
+      zoom: this.state.defaultZoom,
+      openedMarker: 1
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -58,7 +66,8 @@ class App extends Component {
              handleMarkerClick={this.handleMarkerClick}
              center={this.state.center}
              zoom={this.state.zoom}
-             openedMarker={this.state.openedMarker}/>
+             openedMarker={this.state.openedMarker}
+             closeInfoWindow={this.closeInfoWindow}/>
       </div>
     );
   }
