@@ -8,7 +8,8 @@ import Header from './components/Header';
 class App extends Component {
 
   state = {
-    places: []
+    places: [],
+    isOpen: false
   }
 
   componentDidMount() {
@@ -19,10 +20,18 @@ class App extends Component {
     FourSquareAPI.getAll().then( places => this.setState({ places }))
   }
 
+  toggleList = () => {
+    let list = document.getElementsByClassName('search-list')[0]
+    list.classList.toggle('open')
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header toggleList={this.toggleList} />
         <SearchList places={this.state.places}/>
         <Map places={this.state.places}/>
       </div>
