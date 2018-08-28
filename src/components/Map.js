@@ -20,7 +20,10 @@ class Map extends Component {
                   onClick={e => this.props.handleMarkerClick(e, { lat: place.venue.location.lat , lng: place.venue.location.lng}, place.venue.id)}>
             {this.props.openedMarker===place.venue.id && (
               <InfoWindow onCloseClick={handleCloseClick}>
-                <h2>{place.venue.name}</h2>
+                <div>
+                  <h2>{place.venue.name}</h2>
+                  <p>{place.venue.location.address}</p>
+                </div>
               </InfoWindow>
             )}
           </Marker>
