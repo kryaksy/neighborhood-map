@@ -6,11 +6,13 @@ class Map extends Component {
 
     const GoogleMapExample = withGoogleMap(props => (
       <GoogleMap
-        defaultCenter={{ lat: 41.0439991, lng: 28.9932452 }}
-        defaultZoom={14}
+        defaultCenter={this.props.center}
+        defaultZoom={this.props.zoom}
       >
         {this.props.places.map(place => (
-          <Marker key={place.venue.id} position={{ lat: place.venue.location.lat, lng: place.venue.location.lng }} />
+          <Marker key={place.venue.id}
+                  position={{ lat: place.venue.location.lat, lng: place.venue.location.lng }}
+                  onClick={e => this.props.handleMarkerClick(e, { lat: place.venue.location.lat , lng: place.venue.location.lng})}/>
         ))}
 
       </GoogleMap>

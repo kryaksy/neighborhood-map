@@ -9,7 +9,17 @@ class App extends Component {
 
   state = {
     places: [],
-    isOpen: false
+    isOpen: false,
+    defaultCenter: {
+      lat: 41.0439991,
+      lng: 28.9932452
+    },
+    defaultZoom: 14,
+    center: {
+      lat: 41.0439991,
+      lng: 28.9932452
+    },
+    zoom: 14
   }
 
   componentDidMount() {
@@ -28,12 +38,22 @@ class App extends Component {
     })
   }
 
+  handleMarkerClick = (e, latlng) => {
+    this.setState({
+      center: latlng,
+      zoom: 16
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Header toggleList={this.toggleList} />
         <SearchList places={this.state.places}/>
-        <Map places={this.state.places}/>
+        <Map places={this.state.places}
+             handleMarkerClick={this.handleMarkerClick}
+             center={this.state.center}
+             zoom={this.state.zoom}/>
       </div>
     );
   }
