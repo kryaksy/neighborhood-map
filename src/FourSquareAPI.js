@@ -15,13 +15,22 @@ export const getAll = () =>
     })
 
 export const getPhoto = (venueID) =>
-  fetch('https://api.foursquare.com/v2/venues/' + venueID + '?&client_id=' + id + '&client_secret=' + secret + '&v=20180323')
+  fetch(api)
     .then(function(data) {
       return data.json()
     })
     .then(function (data) {
-      return data.response.venue.bestPhoto
+      if (data &&
+          data.response &&
+          data.response.venue &&
+          data.response.venue.bestPhoto) {
+          return data.response.venue.bestPhoto
+      }
     })
     .then(function (item) {
-      return item.prefix + '300x300' + item.suffix
+      if (item) {
+        return item.prefix + '300x300' + item.suffix
+      } else {
+        return 'https://via.placeholder.com/300x300'
+      }
     })
