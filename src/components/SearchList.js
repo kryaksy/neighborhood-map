@@ -7,7 +7,7 @@ class SearchList extends Component {
         <input type="text" placeholder="Search Places"></input>
         <ol className="list">
           {this.props.places.map(place => (
-            <li>{place.venue.name}</li>
+            <li key={place.venue.id}>{place.venue.name}</li>
           ))}
         </ol>
       </div>

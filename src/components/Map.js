@@ -10,7 +10,7 @@ class Map extends Component {
         defaultZoom={14}
       >
         {this.props.places.map(place => (
-          <Marker position={{ lat: place.venue.location.lat, lng: place.venue.location.lng }} />
+          <Marker key={place.venue.id} position={{ lat: place.venue.location.lat, lng: place.venue.location.lng }} />
         ))}
 
       </GoogleMap>
