@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
+import InfoWindowTemplate from './InfoWindowTemplate';
 
 class Map extends Component {
 
@@ -20,10 +21,7 @@ class Map extends Component {
                   onClick={e => this.props.handleMarkerClick(e, { lat: place.venue.location.lat , lng: place.venue.location.lng}, place.venue.id)}>
             {this.props.openedMarker===place.venue.id && (
               <InfoWindow onCloseClick={handleCloseClick}>
-                <div>
-                  <h2>{place.venue.name}</h2>
-                  <p>{place.venue.location.address}</p>
-                </div>
+                <InfoWindowTemplate place={place} />
               </InfoWindow>
             )}
           </Marker>
