@@ -9,7 +9,7 @@ class SearchList extends Component {
   render() {
     return(
       <div className="search-list" tabIndex={this.props.isOpen ? 0 : -1} aria-hidden={!this.props.isOpen}>
-        <input type="text" placeholder="Search" onChange={e => this.props.handleQueryChange(e.target.value)} tabIndex={this.props.isOpen ? 0 : -1} role="textbox" aria-label = "Search places"></input>
+        <input type="text" placeholder="Search" onChange={e => this.props.handleQueryChange(e.target.value)} tabIndex={this.props.isOpen ? 0 : -1} aria-label = "Search places"></input>
         <ol className="list" aria-hidden={!this.props.isOpen} role="menu" arial-label="List of places" tabIndex={this.props.isOpen ? 0 : -1}>
           {this.props.places.map(place => (
             <li key={place.venue.id}
