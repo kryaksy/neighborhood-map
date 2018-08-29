@@ -21,7 +21,7 @@ class App extends Component {
     },
     zoom: 14,
     openedMarker: 1,
-    icon: "",
+    icon: undefined,
   }
 
   componentDidMount() {
@@ -58,7 +58,7 @@ class App extends Component {
       center: this.state.defaultCenter,
       zoom: this.state.defaultZoom,
       openedMarker: 1,
-      icon: ""
+      icon: undefined,
     })
   }
 

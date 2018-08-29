@@ -19,10 +19,7 @@ class Map extends Component {
           <Marker key={place.venue.id}
                   position={{ lat: place.venue.location.lat, lng: place.venue.location.lng }}
                   onClick={e => this.props.handleMarkerClick(e, { lat: place.venue.location.lat , lng: place.venue.location.lng}, place.venue.id)}
-                  icon={
-                    (place.venue.id === this.props.openedMarker) &&
-                      this.props.icon
-                  }>
+                  icon={place.venue.id === this.props.openedMarker ? this.props.icon : undefined}>
             {this.props.openedMarker===place.venue.id && (
               <InfoWindow onCloseClick={handleCloseClick}>
                 <InfoWindowTemplate place={place} />
