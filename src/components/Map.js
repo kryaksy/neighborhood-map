@@ -5,7 +5,7 @@ class Map extends Component {
 
   render() {
     return (
-      <div>
+      <div role="application" tabIndex={0} aria-label="google maps">
         <MapComposite places={this.props.places}
                       center={this.props.center}
                       openedMarker={this.props.openedMarker}

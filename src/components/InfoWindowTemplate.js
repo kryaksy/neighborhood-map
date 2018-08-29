@@ -21,10 +21,12 @@ class InfoWindowTemplate extends Component {
 
   render() {
     return (
-      <div style={{ width: 300, textAlign: "center"}}>
-        <h2>{this.props.place.venue.name}</h2>
-        <div className="place-photo" style={{ width: 300, height: 300, backgroundImage: `url(${this.state.imageURL})` }}></div>
-        <p style={{textAlign: "center"}}>{this.props.place.venue.location.address}</p>
+      <div style={{ width: 300, textAlign: "center"}} id="infoWindow" aria-label="Info window" tabIndex={0}>
+
+        <h2 tabIndex={0}>{this.props.place.venue.name}</h2>
+        <div className="place-photo" style={{ width: 300, height: 300, backgroundImage: `url(${this.state.imageURL})` }} tabIndex={0} aria-label="photo from the place"></div>
+        <p style={{textAlign: "center"}} tabIndex={0}>{this.props.place.venue.location.address}</p>
+
         <span className= "credit-text">
           <a href="https://developer.foursquare.com/" target="/blank"> Foursquare API</a> used
         </span>

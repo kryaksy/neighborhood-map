@@ -89,11 +89,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" role="main">
         <Header toggleList={this.toggleList} />
         <SearchList places={this.state.places}
                     handleMarkerClick={this.handleMarkerClick}
                     handleQueryChange={this.handleQueryChange}
+                    isOpen={this.state.isOpen}
                     />
         <Map places={this.state.places}
              handleMarkerClick={this.handleMarkerClick}
@@ -102,7 +103,8 @@ class App extends Component {
              openedMarker={this.state.openedMarker}
              closeInfoWindow={this.closeInfoWindow}
              iconSelected={this.state.iconSelected}
-             defaultIcon={this.state.defaultIcon}/>
+             defaultIcon={this.state.defaultIcon}
+             tabIndex={0}/>
       </div>
     );
   }
