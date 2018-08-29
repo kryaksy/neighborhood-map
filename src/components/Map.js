@@ -1,44 +1,21 @@
 import React, { Component } from 'react';
-import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
-import InfoWindowTemplate from './InfoWindowTemplate';
+import MapComposite from './MapComposite'
 
 class Map extends Component {
 
   render() {
-
-    let handleCloseClick = () => {
-      this.props.closeInfoWindow()
-    }
-
-    const GoogleMapExample = withGoogleMap(props => (
-      <GoogleMap
-        defaultCenter={this.props.center}
-        defaultZoom={this.props.zoom}
-      >
-        {this.props.places.map(place => (
-          <Marker key={place.venue.id}
-                  position={{ lat: place.venue.location.lat, lng: place.venue.location.lng }}
-                  onClick={e => this.props.handleMarkerClick(e, { lat: place.venue.location.lat , lng: place.venue.location.lng}, place.venue.id)}
-                  icon={place.venue.id === this.props.openedMarker ? this.props.icon : undefined}>
-            {this.props.openedMarker===place.venue.id && (
-              <InfoWindow onCloseClick={handleCloseClick}>
-                <InfoWindowTemplate place={place} />
-              </InfoWindow>
-            )}
-          </Marker>
-        ))}
-      </GoogleMap>
-    ));
-
     return (
       <div>
-        <GoogleMapExample
-          containerElement={<div style={{ height: `93vh`, width: '100vw' }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
+        <MapComposite places={this.props.places}
+                      center={this.props.center}
+                      openedMarker={this.props.openedMarker}
+                      zoom={this.props.zoom}
+                      handleMarkerClick={this.props.handleMarkerClick}
+                      closeInfoWindow={this.props.closeInfoWindow}
+                      icon={this.props.icon}/>
       </div>
     );
   }
-};
+}
 
 export default Map;
