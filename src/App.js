@@ -32,6 +32,10 @@ class App extends Component {
     FourSquareAPI.getAll().then( places => this.setState({ places }))
   }
 
+  getPlaces = query => {
+    FourSquareAPI.getPlaces(query).then( places => this.setState({ places }))
+  }
+
   toggleList = () => {
     let list = document.getElementsByClassName('search-list')[0]
     list.classList.toggle('open')
@@ -58,12 +62,21 @@ class App extends Component {
     })
   }
 
+  handleQueryChange = query => {
+    if(query) {
+      this.getPlaces(query)
+    } else {
+      this.getAllPlaces()
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <Header toggleList={this.toggleList} />
         <SearchList places={this.state.places}
                     handleMarkerClick={this.handleMarkerClick}
+                    handleQueryChange={this.handleQueryChange}
                     />
         <Map places={this.state.places}
              handleMarkerClick={this.handleMarkerClick}
