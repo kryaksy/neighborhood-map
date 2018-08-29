@@ -14,9 +14,9 @@ A google map app which displays places and markers for locations in Besiktas, th
 ### Important Notes:
 - **Offline use** mode works only in production build
 Run for production:
-  1. ```yarn global add serve```
-  2. ```server -s build```
-  3. Visit localhost:5000
+1. ```yarn global add serve```
+2. ```server -s build```
+3. Visit localhost:5000
 ### Available Scripts
 In the project directory, you can run:
 - `npm start`
