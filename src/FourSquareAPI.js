@@ -22,6 +22,9 @@ export const getPlaces = query =>
     .then(function (data) {
       return data.response.groups[0].items
     })
+    .catch(error => {
+			console.log(error)
+		});
 
 export const getPhoto = (venueID) =>
   fetch('https://api.foursquare.com/v2/venues/' + venueID + '?client_id=' + id + '&client_secret=' + secret + '&v=20180708')
@@ -43,3 +46,6 @@ export const getPhoto = (venueID) =>
         return 'https://via.placeholder.com/300x300'
       }
     })
+    .catch(error => {
+			console.log(error)
+		})

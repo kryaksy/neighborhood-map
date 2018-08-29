@@ -40,11 +40,19 @@ class App extends Component {
   }
 
   getAllPlaces = () => {
-    FourSquareAPI.getAll().then( places => this.setState({ places }))
+    FourSquareAPI.getAll()
+      .then( places => this.setState({ places }))
+      .catch(error => {
+        console.log(error)
+      })
   }
 
   getPlaces = query => {
-    FourSquareAPI.getPlaces(query).then( places => this.setState({ places }))
+    FourSquareAPI.getPlaces(query)
+      .then( places => this.setState({ places }))
+      .catch(error => {
+        console.log(error)
+      });
   }
 
   toggleList = () => {

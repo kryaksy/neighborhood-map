@@ -8,11 +8,15 @@ class InfoWindowTemplate extends Component {
   }
 
   componentWillMount() {
-    FourSquareAPI.getPhoto(this.props.place.venue.id).then(url =>
-      (url !== "" && url!==undefined) &&
-        this.setState({
-          imageURL: url
-        }))
+    FourSquareAPI.getPhoto(this.props.place.venue.id)
+      .then(url => (url !== "" && url!==undefined) &&
+          this.setState({
+            imageURL: url
+          })
+      )
+      .catch(error => {
+        console.log(error)
+      });
   }
 
   render() {
