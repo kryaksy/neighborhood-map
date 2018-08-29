@@ -24,7 +24,7 @@ export const getPlaces = query =>
     })
 
 export const getPhoto = (venueID) =>
-  fetch(api)
+  fetch('https://api.foursquare.com/v2/venues/' + venueID + '?client_id=' + id + '&client_secret=' + secret + '&v=20180708')
     .then(function(data) {
       return data.json()
     })
