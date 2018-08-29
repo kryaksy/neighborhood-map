@@ -14,12 +14,12 @@ class App extends Component {
       lat: 41.0439991,
       lng: 28.9932452
     },
-    defaultZoom: 14,
+    defaultZoom: 15,
     center: {
       lat: 41.0439991,
       lng: 28.9932452
     },
-    zoom: 14,
+    zoom: 15,
     openedMarker: 1,
     icon: undefined,
   }
