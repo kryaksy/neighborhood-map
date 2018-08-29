@@ -62,3 +62,12 @@
   margin: 20px 40px 20px 0;
   cursor: pointer;
 }
+
+.credit-text {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.credit-text a {
+  color: gray
+}

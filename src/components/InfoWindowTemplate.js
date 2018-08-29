@@ -21,6 +21,9 @@ class InfoWindowTemplate extends Component {
         <h2>{this.props.place.venue.name}</h2>
         <div className="place-photo" style={{ width: 300, height: 300, backgroundImage: `url(${this.state.imageURL})` }}></div>
         <p style={{textAlign: "center"}}>{this.props.place.venue.location.address}</p>
+        <span className= "credit-text">
+          <a href="https://developer.foursquare.com/" target="/blank"> Foursquare API</a> used
+        </span>
       </div>
     )
   }
