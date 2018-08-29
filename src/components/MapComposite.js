@@ -13,8 +13,8 @@ const MapComposite = compose(
     withGoogleMap
     )(props => {
       return (
-        <GoogleMap defaultCenter={props.center}
-                   defaultZoom={props.zoom}>
+        <GoogleMap center={props.center}
+                   zoom={props.zoom}>
           {(props.places) && (
             props.places.map(place => (
               <Marker key={place.venue.id}
