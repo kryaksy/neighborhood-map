@@ -21,7 +21,18 @@ class App extends Component {
     },
     zoom: 15,
     openedMarker: 1,
-    icon: undefined,
+    defaultIcon: {
+      path: 'M8.49,12.38a3.87,3.87,0,1,1,3.83-3.86,3.85,3.85,0,0,1-3.83,3.86M8.49,0A8.52,8.52,0,0,0,0,8.55c0,4.46,3.84,10.21,6.41,13C7.37,22.61,8.49,24,8.49,24s1.2-1.42,2.23-2.5c2.56-2.68,6.25-8.07,6.25-13A8.51,8.51,0,0,0,8.49,0',
+      fillColor: 'black',
+      fillOpacity: 1,
+      scale: 1.6,
+    },
+    iconSelected: {
+      path: 'M8.49,12.38a3.87,3.87,0,1,1,3.83-3.86,3.85,3.85,0,0,1-3.83,3.86M8.49,0A8.52,8.52,0,0,0,0,8.55c0,4.46,3.84,10.21,6.41,13C7.37,22.61,8.49,24,8.49,24s1.2-1.42,2.23-2.5c2.56-2.68,6.25-8.07,6.25-13A8.51,8.51,0,0,0,8.49,0',
+      fillColor: 'orange',
+      fillOpacity: 1,
+      scale: 1.7,
+    }
   }
 
   componentDidMount() {
@@ -49,7 +60,6 @@ class App extends Component {
       center: latlng,
       zoom: 16,
       openedMarker: id,
-      icon: "https://cdn2.iconfinder.com/data/icons/orientation/32/location-area-pin-1-48.png",
     })
   }
 
@@ -58,7 +68,6 @@ class App extends Component {
       center: this.state.defaultCenter,
       zoom: this.state.defaultZoom,
       openedMarker: 1,
-      icon: undefined,
     })
   }
 
@@ -84,7 +93,8 @@ class App extends Component {
              zoom={this.state.zoom}
              openedMarker={this.state.openedMarker}
              closeInfoWindow={this.closeInfoWindow}
-             icon={this.state.icon}/>
+             iconSelected={this.state.iconSelected}
+             defaultIcon={this.state.defaultIcon}/>
       </div>
     );
   }

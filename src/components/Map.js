@@ -12,7 +12,8 @@ class Map extends Component {
                       zoom={this.props.zoom}
                       handleMarkerClick={this.props.handleMarkerClick}
                       closeInfoWindow={this.props.closeInfoWindow}
-                      icon={this.props.icon}/>
+                      iconSelected={this.props.iconSelected}
+                      defaultIcon={this.props.defaultIcon}/>
       </div>
     );
   }

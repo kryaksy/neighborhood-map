@@ -20,7 +20,7 @@ const MapComposite = compose(
               <Marker key={place.venue.id}
                       position={{ lat: place.venue.location.lat, lng: place.venue.location.lng }}
                       onClick={e => props.handleMarkerClick(e, { lat: place.venue.location.lat , lng: place.venue.location.lng}, place.venue.id)}
-                      icon={place.venue.id === props.openedMarker ? props.icon : undefined}>
+                      icon={place.venue.id === props.openedMarker ? props.iconSelected : props.defaultIcon}>
                 {props.openedMarker===place.venue.id && (
                   <InfoWindow onCloseClick={props.closeInfoWindow}>
                     <InfoWindowTemplate place={place} />
