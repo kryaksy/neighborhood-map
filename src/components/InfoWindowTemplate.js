@@ -24,7 +24,7 @@ class InfoWindowTemplate extends Component {
       <div style={{ width: 300, textAlign: "center"}} id="infoWindow" aria-label="Info window" tabIndex={0}>
 
         <h2 tabIndex={0}>{this.props.place.venue.name}</h2>
-        <div className="place-photo" style={{ width: 300, height: 300, backgroundImage: `url(${this.state.imageURL})` }} tabIndex={0} aria-label="photo from the place"></div>
+        <img src={this.state.imageURL} alt={'best photo from ' + this.props.place.venue.name} tabIndex={0} aria-label="photo from the place"/>
         <p style={{textAlign: "center"}} tabIndex={0}>{this.props.place.venue.location.address}</p>
 
         <span className= "credit-text">
